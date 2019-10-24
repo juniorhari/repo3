@@ -27,7 +27,7 @@ app.post("/", function(req, res){
 
     // res.write("Hello there " + firstName);
     var retData = JSON.parse(body);
-    console.log(retData);
+    // console.log(retData);
     res.write("<html><body><h1> Query Results </h1>");
     res.write("Provincial Tax: " +  retData.pst + "<br />");
     res.write("Provincial HST: " +  retData.hst + "<br />");
@@ -43,19 +43,7 @@ app.post("/", function(req, res){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // Last Line of Code
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("Server Running on Port 3000");
 })
