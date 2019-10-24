@@ -1,0 +1,20 @@
+{
+  "name": "myserver2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/juniorhari/repo3.git"
+  },
+  "author": "Sandeep",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  }
+}
