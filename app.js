@@ -35,8 +35,8 @@ app.post("/", function(req, res) {
     res.send();
 
   } else {
-    var firstName = req.body.firstName;
-    var url = "https://api.salestaxapi.ca/v2/province/ab";
+    var userProvince = req.body.userProvince;
+    var url = "https://api.salestaxapi.ca/v2/province/" + userProvince;
     var options = {
       url: url,
       method: "GET",
@@ -49,9 +49,9 @@ app.post("/", function(req, res) {
       var retData = JSON.parse(body);
       // console.log(retData);
       res.write("<html><body><h1> Query Results </h1>");
-      res.write("Provincial Tax: " + retData.pst + "<br />");
-      res.write("Provincial HST: " + retData.hst + "<br />");
-      res.write("Provincial GST: " + retData.gst + "<br />");
+      res.write("Provincial Tax: " + parseInt(100*retData.pst) + "%" + "<br />");
+      res.write("Provincial HST: " + parseInt(100*retData.hst)  + "%" + "<br />");
+      res.write("Provincial GST: " + parseInt(100*retData.gst) + "%" + "<br />");
       res.write("</body></html>");
       res.send();
     });
